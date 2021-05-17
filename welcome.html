@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    <link rel="shortcut icon" type="image/x-icon"href="kk.ico">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=PT+Serif:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Mukta&family=PT+Serif:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <video src="clip1.mp4.mp4" type="video/mp4" loop class="clip"></video> 
+        </div>
+        <div class="box">
+            <video src="clip4.mp4.mp4" type="video/mp4" loop class="clip"></video> 
+        </div>
+        <div class="box">
+            <video src="clip3.mp4" type="video/mp4" loop class="clip"></video> 
+        </div>
+        <div class="box">
+            <video src="clip3.mp4.mp4" type="video/mp4" loop class="clip"></video> 
+        </div>
+
+
+    </div>
+    <script>
+        const clip = document.querySelectorAll('.clip');
+        for (let i = 0; i<clip.length; i++){
+            clip[i].addEventListener('mouseenter',
+            function(e){
+                clip[i].play()
+            })
+            clip[i].addEventListener('mouseout',
+            function(e){
+                clip[i].pause()
+            })
+        }
+    </script>
+    <div>
+        <div class="content">
+            <span class="text1">hello!</span>
+            <span class="text2">I'm AICHA DAOUDI</span>
+            <a href="about me.html">
+            <button type="button"><span></span>welcome to my Website</button>
+            </a>
+        </div>
+    </div>    
+    
+        
+
+  
+</body>
+</html>

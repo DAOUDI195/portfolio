@@ -1,0 +1,252 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .background {
+    animation:zoomIn 10s linear infinite alternate;
+    background-image: url(background.jpg);
+    background-size: cover;
+    height:100vh;
+    position: fixed;
+    width:100vw;
+    
+  }
+  
+  .glass {
+    animation:zoomIn 10s linear infinite alternate-reverse;
+    background-image: url(background.jpg);
+    background-size:cover;
+    height:100vh;
+    opacity:.3;
+    position:fixed;
+    width:100vw;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform:scale(1);
+    }
+    100% {
+      transform:scale(1.5);
+    }
+  }
+  .menu {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  .logo{
+    width: 120px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .menu ul li{
+   list-style: none;
+   display: inline-block;
+   margin: 0px 20px;
+   position: relative;
+  }
+  .menu ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+  }
+  .menu ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: yellow;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    transition: 0.5s;
+  }
+  .menu ul li:hover::after{
+    width: 100%;
+  }
+  .middle{
+    position: absolute;
+    top: 90%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+  }
+  .btn{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    margin: 0px;
+    border-radius: 30%;
+    box-shadow: 0 5px 15px -5px #fff;
+    color: #050505;
+    overflow: hidden;
+    position: relative;
+  }
+  .btn i{
+    line-height: 50px;
+    font-size: 30px;
+    transition: 0.2s linear;
+  }
+  .btn:hover i{
+    transform: scale(1.3);
+    color: #f1da0a;
+  }
+  .btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: #080808;
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+  }
+  .btn:hover::before{
+    animation: aaa 0.7s 1;
+    top: -10%;
+    left: -10%;
+  }
+  @keyframes aaa {
+    0%{
+      left: -110%;
+      top: 90%;
+    }50%{
+      left: 10%;
+      top: -30%;
+    }100%{
+      top: -10%;
+      left: -10%;
+    }
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+  ::selection{
+    
+    color:transparent;
+    background: #f6fa04;
+  }
+  .skill-bars{
+    position: fixed;
+    padding: 25px 30px;
+    width: 600px;
+    background: transparent;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    left: 28%
+  }
+  .skill-bars .bar{
+    margin: 20px 0;
+  }
+  .skill-bars .bar:first-child{
+    margin-top: 0px;
+  }
+  .skill-bars .bar .info{
+    margin-bottom: 5px;
+  }
+  .skill-bars .bar .info span{
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+  }
+  @keyframes showText {
+    100%{
+      opacity: 1;
+    }
+  }
+  .skill-bars .bar .progress-line{
+    height: 10px;
+    width: 100%;
+    background: transparent;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+                0 1px rgba(255,255,255,0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+  }
+  .bar .progress-line span{
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #e5f504;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  .bar .progress-line.html span{
+    width: 53%;
+  }
+  .bar .progress-line.css span{
+    width: 42%;
+  }
+  .bar .progress-line.photoshop span{
+    width: 64%;
+  }
+  .bar .progress-line.python span{
+    width: 36%;
+  }
+  .bar .progress-line.linux span{
+    width: 30%;
+  }
+  .progress-line span::before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  .progress-line span::after{
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #000;
+    color: white;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  @keyframes showText2 {
+    100%{
+      opacity: 1;
+    }
+  }
+  .progress-line.html span::after{
+    content: "53%";
+  }
+  .progress-line.css span::after{
+    content: "42%";
+  }
+  .progress-line.photoshop span::after{
+    content: "64%";
+  }
+  .progress-line.python span::after{
+    content: "36%";
+  }
+  .progress-line.linux span::after{
+    content: "30%";
+  }
+
+  

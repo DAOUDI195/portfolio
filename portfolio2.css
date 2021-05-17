@@ -1,0 +1,192 @@
+ *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .background {
+    animation:zoomIn 10s linear infinite alternate;
+    background-image:url(background.jpg);
+    background-size:cover;
+    height:100vh;
+    position:fixed;
+    width:100vw;
+  }
+  
+  .glass {
+    animation:zoomIn 10s linear infinite alternate-reverse;
+    background-image:url(background.jpg);
+    background-size:cover;
+    height:100vh;
+    opacity:.3;
+    position:fixed;
+    width:100vw;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform:scale(1);
+    }
+    100% {
+      transform:scale(1.5);
+    }
+  }
+  .menu {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  .logo{
+    width: 120px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .menu ul li{
+   list-style: none;
+   display: inline-block;
+   margin: 0px 20px;
+   position: relative;
+  }
+  .menu ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+  }
+  .menu ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: yellow;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    transition: 0.5s;
+  }
+  .menu ul li:hover::after{
+    width: 100%;
+  }
+
+  .me{
+    cursor: pointer;
+    left:60%;
+    height: 90vh;
+    position: fixed;
+    filter: grayscale(100%);
+    
+  }
+  .me:hover{
+    filter: grayscale(0%);
+  }
+  .texto {
+    top: 35%;
+    position: fixed; 
+    width: 750px;
+    height: 30vh;
+    right: 50%;
+    
+  }
+  .intro-text h1{
+    position: fixed;
+    font-family: 'Libre Baskerville', serif;
+
+    left:13%;
+    top: 31%;
+    color: transparent;
+    font-size: 30px;
+    -webkit-text-stroke: 0.020vw rgb(68, 67, 67);
+    text-transform: uppercase;
+  }
+  .intro-text h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 177px;
+    width: 0;
+    height: 100%;
+    color: rgb(10, 10, 10);
+    -webkit-text-stroke: 0vw rgb(54, 54, 54);
+    border-right: 2px solid black;
+    overflow: hidden;
+    animation: animate 5s linear infinite;
+  }
+  @keyframes animate {
+    0%,10%,100%
+    {
+      width: 0;
+    }
+    70%,90%
+    {
+      width: 70%;
+    }
+  }
+  .intro-text h3{
+    font-family: 'Philosopher', sans-serif;
+    position: fixed;
+    left: 15%;
+    width: 31%;
+    top: 42%;
+    color: rgb(12, 12, 12);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .middle{
+    position: absolute;
+    top: 90%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+  }
+  .btn{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    margin: 0px;
+    border-radius: 30%;
+    box-shadow: 0 5px 15px -5px #fff;
+    color: #050505;
+    overflow: hidden;
+    position: relative;
+  }
+  .btn i{
+    line-height: 50px;
+    font-size: 30px;
+    transition: 0.2s linear;
+  }
+  .btn:hover i{
+    transform: scale(1.3);
+    color: #f1da0a;
+  }
+  .btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: #080808;
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+  }
+  .btn:hover::before{
+    animation: aaa 0.7s 1;
+    top: -10%;
+    left: -10%;
+  }
+  @keyframes aaa {
+    0%{
+      left: -110%;
+      top: 90%;
+    }50%{
+      left: 10%;
+      top: -30%;
+    }100%{
+      top: -10%;
+      left: -10%;
+    }
+  }
+ 
